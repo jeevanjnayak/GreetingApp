@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.*;
 public class HelloRestController {
     @GetMapping("/hello")
     public String sayHello() {
-        return "Hello Everyone";
+        return "Hello Jeevan";
     }
 
-    @RequestMapping(value = {"/hello-w"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/rhello"}, method = RequestMethod.GET)
     public String sayHelloDifferently() {
 
-        return "Hello Everyone";
+        return "Hello Jeevan";
     }
 
-    @GetMapping("/hello/query")
+    @GetMapping("/hello/pname")
     public String sayPosting(@RequestParam String firstName, @RequestParam String lastName) {
 
         return "Hello " + firstName + " " + lastName;
