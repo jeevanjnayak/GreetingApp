@@ -1,8 +1,17 @@
 package com.server.firstspringapp.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class User {
+    @Id
+    @GeneratedValue
+    private int id;
     private String firstName;
     private String lastName;
+
 
     public User(String firstName, String lastName) {
         this.firstName = firstName;
@@ -11,6 +20,12 @@ public class User {
 
     public User() {
 
+    }
+
+    public User(long incrementAndGet, String message) {
+    }
+
+    public User(User user) {
     }
 
     public String getFirstName() {
@@ -35,5 +50,14 @@ public class User {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Id
+    public int getId() {
+        return id;
     }
 }
